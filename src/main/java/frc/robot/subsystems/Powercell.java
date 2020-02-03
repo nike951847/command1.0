@@ -7,21 +7,25 @@
 
 package frc.robot.subsystems;
 
-import edu.wpi.first.wpilibj2.command.SubsystemBase;
-import com.ctre.phoenix.motorcontrol.can.*;
 import com.ctre.phoenix.motorcontrol.ControlMode;
-import edu.wpi.first.wpilibj.Timer;
+import com.ctre.phoenix.motorcontrol.NeutralMode;
+import com.ctre.phoenix.motorcontrol.can.WPI_VictorSPX;
 
+import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
-public class ball extends SubsystemBase {
-  private WPI_VictorSPX intake   = new WPI_VictorSPX(5); 
+public class Powercell extends SubsystemBase {
+  /**
+   * Creates a new Powercell.
+   */
+  private WPI_VictorSPX intake = new WPI_VictorSPX(5);
   private WPI_VictorSPX flywheel = new WPI_VictorSPX(6);
 
   /**
    * Creates a new ball.
    */
 
-  public ball() {
+  public Powercell() {
+    flywheel.setNeutralMode(NeutralMode.Coast);
 
   }
   public void intake(){
@@ -29,13 +33,10 @@ public class ball extends SubsystemBase {
 
   }
   public void flywheelspeedup(){
-
-    
-
-
+    flywheel.set(ControlMode.PercentOutput,1);
   }
   public void flywheelslowdown(){
-
+    flywheel.set(ControlMode.PercentOutput,0);
   }
   public void upward(){
     /**將球傳往射球 */
@@ -44,6 +45,6 @@ public class ball extends SubsystemBase {
 
   @Override
   public void periodic() {
-    // This method will be called once per scheduler run
-  }
+    // This method will be called once per scheduler
+}
 }
