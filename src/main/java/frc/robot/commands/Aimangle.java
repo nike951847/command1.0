@@ -9,11 +9,11 @@ package frc.robot.commands;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
 
-public class aim extends CommandBase {
+public class Aimangle extends CommandBase {
   /**
-   * Creates a new aim.
+   * Creates a new Aimangle.
    */
-  public aim() {
+  public Aimangle() {
     // Use addRequirements() here to declare subsystem dependencies.
   }
 

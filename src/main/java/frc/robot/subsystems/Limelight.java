@@ -7,34 +7,23 @@
 
 package frc.robot.subsystems;
 
-import edu.wpi.first.wpilibj2.command.CommandBase;
-import edu.wpi.first.wpilibj.networktables.NetworkTable;
-public class Limelight extends CommandBase {
+import edu.wpi.first.wpilibj2.command.SubsystemBase;
+import edu.wpi.first.networktables.NetworkTable;
+import edu.wpi.first.networktables.NetworkTableEntry;
+import edu.wpi.first.networktables.NetworkTableInstance;
+public class Limelight extends SubsystemBase {
   /**
    * Creates a new Limelight.
    */
+
   public Limelight() {
-    // Use addRequirements() here to declare subsystem dependencies.
+
+
   }
 
-  // Called when the command is initially scheduled.
   @Override
-  public void initialize() {
+  public void periodic() {
+    // This method will be called once per scheduler run
   }
 
-  // Called every time the scheduler runs while the command is scheduled.
-  @Override
-  public void execute() {
-  }
-
-  // Called once the command ends or is interrupted.
-  @Override
-  public void end(boolean interrupted) {
-  }
-
-  // Returns true when the command should end.
-  @Override
-  public boolean isFinished() {
-    return false;
-  }
 }
