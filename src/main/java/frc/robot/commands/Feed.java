@@ -10,12 +10,14 @@ package frc.robot.commands;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.subsystems.Powercell;
 
-public class Aimdistance extends CommandBase {
+public class Feed extends CommandBase {
+  private Powercell localpowercellsub;
   /**
-   * Creates a new Aimdistance.
+   * Creates a new Feed.
    */
-  public Aimdistance(Powercell mainpowercellsub) {
+  public Feed(Powercell mainpowercellsub) {
     // Use addRequirements() here to declare subsystem dependencies.
+    localpowercellsub = mainpowercellsub;
   }
 
   // Called when the command is initially scheduled.
@@ -26,6 +28,7 @@ public class Aimdistance extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
+    
   }
 
   // Called once the command ends or is interrupted.

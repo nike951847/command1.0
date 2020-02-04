@@ -10,11 +10,16 @@ package frc.robot.commands;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.subsystems.Powercell;
 
-public class Aimdistance extends CommandBase {
+public class Spinup extends CommandBase {
+  Powercell localpowercellsub;
   /**
-   * Creates a new Aimdistance.
+   * Creates a new Spinup.
+   * 
+   * @param mainpowercell 運行的Powercell系統 
    */
-  public Aimdistance(Powercell mainpowercellsub) {
+  public Spinup(Powercell mainpowercell) {
+   localpowercellsub = mainpowercell; 
+
     // Use addRequirements() here to declare subsystem dependencies.
   }
 

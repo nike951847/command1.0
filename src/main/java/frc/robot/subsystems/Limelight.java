@@ -11,11 +11,12 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import edu.wpi.first.networktables.NetworkTable;
 import edu.wpi.first.networktables.NetworkTableEntry;
 import edu.wpi.first.networktables.NetworkTableInstance;
+
 public class Limelight extends SubsystemBase {
   /**
    * Creates a new Limelight.
    */
-
+double x,y,area;
   public Limelight() {
 
 
@@ -23,6 +24,16 @@ public class Limelight extends SubsystemBase {
 
   @Override
   public void periodic() {
+    
+    NetworkTable table = NetworkTableInstance.getDefault().getTable("limelight");
+    NetworkTableEntry tx = table.getEntry("tx");
+    NetworkTableEntry ty = table.getEntry("ty");
+    NetworkTableEntry ta = table.getEntry("ta");
+
+    //read values periodically
+    x = Math.toDegrees(tx.getDouble(0.0));//輸出值由弧度轉成角度
+    y = Math.toDegrees(ty.getDouble(0.0));
+    area = ta.getDouble(0.0);
     // This method will be called once per scheduler run
   }
 

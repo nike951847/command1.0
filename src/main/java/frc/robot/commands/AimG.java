@@ -8,7 +8,8 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj2.command.SequentialCommandGroup;
-import frc.robot.commands.*;
+import frc.robot.subsystems.Powercell;
+
 // NOTE:  Consider using this command inline, rather than writing a subclass.  For more
 // information, see:
 // https://docs.wpilib.org/en/latest/docs/software/commandbased/convenience-features.html
@@ -16,11 +17,13 @@ public class AimG extends SequentialCommandGroup {
   /**
    * Creates a new AimG.
    */
-  public AimG() {
+  public AimG(Powercell mainpowercellsub) {
+   
     // Add your commands in the super() call, e.g.
     // super(new FooCommand(), new BarCommand());
     super(
-      
+     new Aimangle(mainpowercellsub)
     );
+    
   }
 }

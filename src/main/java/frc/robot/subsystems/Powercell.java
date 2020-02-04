@@ -12,6 +12,7 @@ import com.ctre.phoenix.motorcontrol.NeutralMode;
 import com.ctre.phoenix.motorcontrol.can.WPI_VictorSPX;
 
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
+import frc.robot.RobotContainer;
 
 public class Powercell extends SubsystemBase {
   /**
@@ -19,6 +20,7 @@ public class Powercell extends SubsystemBase {
    */
   private WPI_VictorSPX intake = new WPI_VictorSPX(5);
   private WPI_VictorSPX flywheel = new WPI_VictorSPX(6);
+  private WPI_VictorSPX feed = new WPI_VictorSPX(7);
 
   /**
    * Creates a new ball.
@@ -31,18 +33,27 @@ public class Powercell extends SubsystemBase {
   public void intake(){
     intake.set(ControlMode.PercentOutput,0.5);
 
+
   }
-  public void flywheelspeedup(){
+  public void intakestop(){
+    intake.set(ControlMode.PercentOutput,0);
+  }
+  public void flywheelspinup(){
     flywheel.set(ControlMode.PercentOutput,1);
   }
   public void flywheelslowdown(){
     flywheel.set(ControlMode.PercentOutput,0);
   }
-  public void upward(){
+  public void feed(){
+
     /**將球傳往射球 */
+    feed.set(ControlMode.PercentOutput, 0.5);
+
 
   }
-
+  public void stop(){
+    feed.set(ControlMode.PercentOutput, 0.0);
+  }
   @Override
   public void periodic() {
     // This method will be called once per scheduler

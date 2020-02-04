@@ -10,11 +10,12 @@ package frc.robot.commands;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.subsystems.*;
 public class Intake extends CommandBase {
-  private Powercell mPowercell;
+  private Powercell localpowercellsub;
   /**
    * Creates a new Intake.
    */
-  public Intake() {
+  public Intake(Powercell mainpowercellsub) {
+    localpowercellsub = mainpowercellsub;
     // Use addRequirements() here to declare subsystem dependencies.
     
   }
@@ -27,8 +28,8 @@ public class Intake extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-  
-    mPowercell.intake();
+
+    localpowercellsub.intake();
     
   }
 
