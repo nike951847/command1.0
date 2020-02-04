@@ -11,6 +11,7 @@ import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.subsystems.Powercell;
 
 public class Aimdistance extends CommandBase {
+  private Powercell localpowercellsub;
   /**
    * Creates a new Aimdistance.
    */

@@ -35,6 +35,11 @@ public static final class DriverConstants{
         (kWheelDiameterInches * Math.PI) / (double) kEncoderCPR;
         public static final boolean kGyroReversed=false;
 }
+public final class LimelightConstats{
+    public static final int postangle=25;
+    
+
+}
 
 
 

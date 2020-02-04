@@ -16,11 +16,21 @@ public class Limelight extends SubsystemBase {
   /**
    * Creates a new Limelight.
    */
-double x,y,area;
+private double x,y,area;
   public Limelight() {
 
 
   }
+  public double getX(){
+    return x;
+  }
+  public double getY(){
+    return y;
+  }
+  public double getArea(){
+    return y;
+  }
+  public double Dis;
 
   @Override
   public void periodic() {

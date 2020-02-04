@@ -8,13 +8,16 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
+import frc.robot.subsystems.Limelight;
 import frc.robot.subsystems.Powercell;
 
 public class Aimangle extends CommandBase {
+  private Powercell localpowercellsub;
+  private Limelight localLimelight;
   /**
    * Creates a new Aimangle.
    */
-  public Aimangle(Powercell mainpowercellsub) {
+  public Aimangle(Powercell mainPowerCellsub,Limelight mainLimeLight) {
     // Use addRequirements() here to declare subsystem dependencies.
   }
 

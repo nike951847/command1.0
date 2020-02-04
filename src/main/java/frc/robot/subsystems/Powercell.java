@@ -51,7 +51,7 @@ public class Powercell extends SubsystemBase {
 
 
   }
-  public void stop(){
+  public void feedstop(){
     feed.set(ControlMode.PercentOutput, 0.0);
   }
   @Override
